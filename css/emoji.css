@@ -1,0 +1,348 @@
+.emoji_btn {
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.emoji_container * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.emoji_container {
+    display: none;
+    width: 544px;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #bfbfbf;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.176);
+}
+
+.emoji_container ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.emoji_content {
+    height: 277px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+.emoji_content ul {
+    padding-top: 1px;
+    padding-left: 1px;
+}
+
+.emoji_content ul li {
+    width: 54px;
+    height: 54px;
+    float: left;
+    border: 1px solid #e3e3e3;
+    margin-top: -1px;
+    margin-left: -1px;
+}
+
+.emoji_content ul li a {
+    display: block;
+    line-height: 54px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.emoji_content ul li a img {
+    vertical-align: middle;
+    max-width: 52px;
+    max-height: 52px;
+}
+
+.emoji_content .mCSB_scrollTools {
+    width: 10px;
+}
+
+.emoji_content .mCSB_outside + .mCS-minimal-dark.mCSB_scrollTools_vertical, .emoji_content .mCSB_outside + .mCS-minimal.mCSB_scrollTools_vertical {
+    margin: 5px 0;
+}
+
+.emoji_tab {
+    background-color: #f7f7f7;
+    border-top: 1px solid #e3e3e3;
+    color: #666;
+    height: 32px;
+    position: relative;
+}
+
+.emoji_tab_prev {
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-right: 4px dashed;
+    cursor: pointer;
+    left: 8px;
+    top: 12px;
+    position: absolute;
+    display: inline-block;
+    height: 0;
+    vertical-align: middle;
+    width: 0;
+}
+
+.emoji_tab_next {
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px dashed;
+    cursor: pointer;
+    right: 7px;
+    top: 12px;
+    position: absolute;
+    display: inline-block;
+    height: 0;
+    vertical-align: middle;
+    width: 0;
+}
+
+.emoji_tab_list {
+    left: 22px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 500px;
+}
+
+.emoji_tab_list ul {
+    width: 1500px;
+    transition: all 0.8s ease 0s;
+}
+
+.emoji_tab_list ul li {
+    border-top: 0 none;
+    cursor: pointer;
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    margin: 5px 4px 0 0;
+    font-size: 12px;
+    border-radius: 3px;
+    text-align: center;
+    width: 68px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.emoji_tab_list ul li:hover {
+    background: #e5e5e5;
+}
+
+.emoji_tab_list ul li.selected {
+    color: #fff;
+    background: steelblue;
+}
+
+.emoji_preview {
+    position: absolute;
+    top: 0;
+    border: 1px solid #c8c8c8;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    background: #ffffff;
+    text-align: center;
+    line-height: 65px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.176);
+    z-index: 2;
+    display: none;
+}
+
+.emoji_preview img {
+    vertical-align: middle;
+    max-width: 42px;
+    max-height: 42px;
+}
+
+body {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: #606c71;
+}
+
+.page-header {
+    color: #fff;
+    text-align: center;
+    background-color: #159957;
+    background-image: linear-gradient(120deg, #155799, #159957);
+    padding: 96px 80px;
+    margin: 0;
+    border: none;
+}
+
+.project-name {
+    margin-top: 0;
+    margin-bottom: 35px;
+    font-size: 52px;
+}
+
+.project-tagline {
+    margin-bottom: 32px;
+    font-weight: normal;
+    opacity: 0.7;
+    font-size: 20px;
+}
+
+.page-header a {
+    color: #1e6bb8;
+    text-decoration: none;
+}
+
+.page-header a:hover {
+    text-decoration: underline;
+}
+
+.page-header .btn {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4.8px;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    padding: 12px 16px;
+    font-size: 16px;
+}
+
+.page-header .btn + .btn {
+    margin-left: 16px;
+}
+
+.page-header .btn:hover {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.main-content {
+    padding-top: 32px;
+}
+
+.main-content h2 {
+    color: #156987;
+    font-weight: normal;
+    margin-top: 50px;
+    margin-bottom: 16px;
+}
+
+#editor {
+	width: 90%;
+    height: 91px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;
+    display: block;
+    font-size: 14px;
+    line-height: normal;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    white-space:normal;/*换行*/
+    min-height:20px;
+    word-wrap:break-word;/*为了在ie和FF顺利换行，加上word-wrap*/
+    overflow-x:auto;
+    overflow-y: auto; /*visible (默认), hidden, scroll, 和auto*/
+}
+
+#editor:focus {
+    border-color: #66afe9;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+    outline: 0 none;
+}
+
+#btn {
+    margin-top: 10px;
+}
+
+.m-t-20 {
+    margin-top: 20px;
+}
+
+.m-t-70 {
+    margin-top: 70px;
+}
+
+.site-footer {
+    padding-top: 32px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    border-top: solid 1px #eff0f1;
+}
+
+.site-footer-owner {
+    display: block;
+    font-weight: bold;
+}
+
+.site-footer-credits {
+    color: #819198;
+}
+
+hr {
+    margin-top: 32px;
+    margin-bottom: 32px
+}
+
+pre {
+    padding: 0;
+    border: 0;
+}
+
+.heart {
+	background:url(../img/web_heart_animation.png);
+	background-position:left;
+	background-repeat:no-repeat;
+	height:30px;
+	width:30px;
+	cursor:pointer;
+	position:absolute;
+	background-size:2900%;
+}
+.heart:hover, .heart:focus{
+	background-position:right;
+}
+
+@-webkit-keyframes heartBlast {
+	0% {
+		background-position:left;
+	}
+	100% {
+		background-position:right;
+	}
+}
+
+@keyframes heartBlast {
+	0% {
+		background-position:left;
+	}
+	100% {
+		background-position:right;
+	}
+}
+
+.heartAnimation {
+	display:inline-block;
+	-webkit-animation-name:heartBlast;
+	animation-name:heartBlast;
+	-webkit-animation-duration:.8s;
+	animation-duration:.8s;
+	-webkit-animation-iteration-count:1;
+	animation-iteration-count:1;
+	-webkit-animation-timing-function:steps(28);
+	animation-timing-function:steps(28);
+	background-position:right;
+}
+.likeCount{font-family:'Georgia', Times, Times New Roman, serif; color:#999999}

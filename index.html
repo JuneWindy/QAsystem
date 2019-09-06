@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/jquery.cookie.js" type="text/javascript"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件  -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Index</title>
+</head>
+<body>
+<!--顶部导航栏-->
+<nav class="navbar" role="navigation" style="background-color: #e1e1e8; border: 0; margin: 0px; border-radius: 0px; height: 95px;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <h1 style="font-weight: bolder;">Problem Report Board</h1>
+        </div>
+        <div class="navbar-header pull-right hidden-xs">
+            <button type="button" class="btn" style="text-align: center; background-color:#515151; color: #ffffff; font-weight: bolder; margin-top: 25px;" data-toggle="modal" data-target="#myModal">Log In</button>
+        </div>
+    </div>
+</nav>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" id = "pop-login" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:40%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" id = "close-login" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel" style="font-weight: bolder;">
+                    See more on Problem Report Board
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" method="post" id = "form1">
+                    <div class="form-group">
+                        <label for="userNamelogin" class="col-sm-2">UserName</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control"  name="UserName" id="userNamelogin"
+                                   placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2" >Password</label>
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" name="Password"  id="password"
+                                   placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group" style="padding-top: 10px;">
+                        <div class="col-sm-12">
+                            <input type="button" class="btn btn-primary btn-lg btn-block" id = "login" style="font-weight: bolder;" value="Log In">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin: 10px;">
+                        <div class="col-sm-12" >
+                            <div class="col-sm-5" style="margin-top:10px; padding: 0px;display: inline-block;border-top: 2px solid grey;"></div>
+                            <div class="col-sm-2" style="margin:0px; padding: 0px ;vertical-align: middle;text-align: center;">or</div>
+                            <div class="col-sm-5" style="margin-top:10px;padding: 0px ;display: inline-block;border-top: 2px solid grey;"></div>
+                        </div>
+                    </div>
+                </form>
+                <div class="form-group" style="padding-top: 10px;">
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-success btn-lg btn-block" style="font-weight: bolder;" data-toggle="modal" data-target="#myModal2" onclick="createNewAccount();">Create a new account</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12" style="padding: 20px; height: 20%;text-align: center;">
+                        <a data-dismiss="modal" >Not Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:40%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" id = "close-reg" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel2" style="font-weight: bolder;">
+                    See more on Problem Report Board
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="userNamereg" class="col-sm-2">UserName</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control"  id="userNamereg"
+                                   placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password2" class="col-sm-2">Password</label>
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" id="password2"
+                                   placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_password" class="col-sm-6">Confirm Password</label>
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" id="confirm_password"
+                                   placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group" style="padding-top: 10px;">
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn btn-success btn-lg btn-block" style="font-weight: bolder;" id="user-register" >Register</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--主体部分-->
+<div class="container">
+    <div class="row" >
+        <div class="col-xs-6 col-sm-4 " style="min-height: 800px;
+            border: 1px solid black;display: table-cell;vertical-align: middle;text-align: center;">
+            <div>
+                <img id="loadimg" src="http://www.zdoubleleaves.cn/userImage/default.jpg" class="img-responsive img-rounded" style="margin-top:40%; width: 100%; height: 100%;">
+            </div>
+            <div class="text-center" style="margin: 20%;">
+                <h4>---Not Log In---</h4>
+            </div>
+            <div class="text-center" style="margin: 20%;">
+                <a data-toggle="modal" data-target="#myModal">Log In?</a>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-8" style="min-height: 50px;
+            border: 1px solid black; border-left: none; border-bottom: none;vertical-align: middle; background-color: #e1e1e8">
+            <div>
+                <div >
+                    <h1 style="font-weight: bolder; font-size: medium; text-align: left; vertical-align: middle;">TOP!</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-8" style="padding:0px; min-height: 750px;border: 1px solid black; border-left:none;border-top: none; ">
+        <div class="col-xs-12 col-sm-12" style="border-bottom: 1px solid black;
+                    vertical-align: middle; padding:10px">
+            <div class="col-xs-1 col-sm-2" style="vertical-align: middle; padding: 0px; background-color: transparent; height: 100%;">
+                <h3>Andy</h3>
+            </div>
+            <div class="col-xs-9 col-sm-8" style="padding:0px;">
+                <div style="
+                        vertical-align: middle; background-color: transparent;">
+                    <h4>[solved]</h4>
+                    <h5>Datatables plugin Loading json Data error from web service(.net)
+                    </h5>
+                </div>
+                <div style="vertical-align: middle; background-color: transparent;">
+                    <text>I'm trying to use DataTables (getting data from Ajax) on my website form. I was experiencing some difficulties with that so I took a step back and tried to implement DataTables on a very basic table.</text>
+                </div>
+            </div>
+            <div class="col-xs-1 col-sm-1" style="padding: 0px;">
+                <button type="button" class="btn" onclick="alert('Please log in!');">
+                    <span class="glyphicon glyphicon-comment"></span>
+                </button>
+            </div>
+            <div class="col-xs-1 col-sm-1" style="padding: 0px;" >
+                <button type="button" class="btn" onclick="alert('Please log in!');">
+                    <span class="glyphicon glyphicon-heart-empty"></span>
+                </button>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12" style="border-bottom: 1px solid black;
+                vertical-align: middle; padding:10px">
+                <div class="col-xs-1 col-sm-2" style="vertical-align: middle; padding: 0px; background-color: transparent; height: 100%;">
+                    <h3>Jack</h3>
+                </div>
+                <div class="col-xs-9 col-sm-8" style="padding:0px;">
+                    <div style="
+                    vertical-align: middle; background-color: transparent;">
+                        <h4>[unsolved]</h4>
+                        <h5>Shapefile that is reprojected using dotspatial is different from the original one
+                        </h5>
+                    </div>
+                    <div style="vertical-align: middle; background-color: transparent;">
+                        <text>I have a shapefile with EPSG:32749 that will be inserted to Oracle Database and displayed in geoserver. Before that I want to reproject my shapefile to ESPG:4326 using dotspatial library</text>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-sm-1" style="padding: 0px;">
+                    <button type="button" class="btn" onclick="alert('Please log in!');">
+                        <span class="glyphicon glyphicon-comment"></span>
+                    </button>
+                </div>
+                <div class="col-xs-1 col-sm-1" style="padding: 0px;" >
+                    <button type="button" class="btn" onclick="alert('Please log in!');">
+                        <span class="glyphicon glyphicon-heart-empty"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix visible-xs"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+	//$.fn.modal.Constructor.prototype.enforceFocus =function(){};
+    $(function(){
+        // dom加载完毕
+        var $m_btn = $('#modalBtn');
+        var $modal = $('#myModal2');
+        $m_btn.on('click', function(){
+            $modal.modal({backdrop: 'static'});
+        });
+        //$.cookie.raw = true;
+        $(document).ready(function(){
+        	if($.cookie('dm_userID')!=null)
+	        {
+	        	alert("Already login!");
+	        	window.location.href="login.html";        	
+	        }
+        });
+        // 测试 bootstrap 居中
+        $modal.on('show.bs.modal', function(){
+            var $this = $(this);
+            var $modal_dialog = $this.find('.modal-dialog');
+            // 关键代码，如没将modal设置为 block，则$modala_dialog.height() 为零
+            $this.css('display', 'block');
+            $modal_dialog.css({'margin-top': Math.max(0, ($(window).height() - $modal_dialog.height()) / 2) });
+        });
+        $("#login").click(function() {
+	    	var name=$("#userNamelogin").val();
+	    	var pwd=$("#password").val();
+	        $.post("login.php",
+		    {
+		        UserName:name,
+		        Password:pwd
+		    },
+		        function(data,status){
+				var obj = jQuery.parseJSON(data);
+				try
+				{
+					var uid=obj[0].userID;
+					var isa=obj[0].isadmin;
+					$.cookie('dm_userID',uid, {expires:7,path: '/' });
+					$.cookie('dm_isadmin',isa, {expires:7,path: '/' });
+					$.cookie('dm_userName',name, {expires:7,path: '/' });
+					$.cookie('dm_password',pwd, {expires:7,path: '/' });
+					console.log(uid);				
+					window.location.href="login.html";
+				}
+				catch(err)
+				{
+					alert("login failed");
+				}
+		        
+		    });
+	    });
+	    $("#user-register").click(function(){
+	    	var newname = $("#userNamereg").val();
+	    	var pwd = $("#password2").val();
+	    	var conpwd = $("#confirm_password").val();
+	    	if(pwd==conpwd)
+	    	{
+	    		$.ajax(
+			    	{
+			    		url:"regist.php",
+			    		async:false,
+			    		type:'post',
+			    		//dataType:'json',  
+			    		data:{      
+					        UserName:newname,
+				        	Password:pwd,     
+					    },     
+			    		success:function(data){		
+			    			if(data=="true")
+			    			{
+			    				alert("regist successed");
+			    			}		
+			    			else
+			    			{
+			    				alert("regist failed");
+			    			}			
+							console.log("yes");
+						},
+						error:function(){
+							console.log("no");
+							alert("failed");
+						}
+					}
+				);
+	    		
+	    	}
+	    	else
+	    	{
+	    		alert("confirm failed");
+	    	}	    	
+	    });
+    });
+    function login() {
+    $("#myModal2").on('click',function(){
+        $("#close-reg").trigger('click');
+        $('#myModal').modal();
+    });
+    }
+    function createNewAccount() {
+        $("#myModal").on('click',function(){
+            $("#close-login").trigger("click");
+            $('#myModal2').modal();
+        });
+    }
+</script>
+</body>
+</html>
